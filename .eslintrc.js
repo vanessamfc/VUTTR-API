@@ -23,6 +23,7 @@ module.exports = {
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
     'import/no-cycle': 'off',
+    'no-underscore-dangle': 'off',
     'prettier/prettier': 'error',
     'class-methods-use-this': 'off',
     'no-param-reassign': 'off',
