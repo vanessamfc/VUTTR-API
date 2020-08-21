@@ -5,7 +5,7 @@ import mongoose from '../../config/database';
 export interface IUser extends Document {
   name?: string;
   email?: string;
-  password?: string;
+  password: string;
 }
 
 const UserSchema = new mongoose.Schema({
@@ -22,7 +22,6 @@ const UserSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true,
-    select: false,
     minlength: 6,
   },
   updated: { type: Date, default: Date.now },

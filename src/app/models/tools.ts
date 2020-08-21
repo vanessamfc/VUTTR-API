@@ -1,4 +1,3 @@
-import bcrypt from 'bcrypt';
 import { Document } from 'mongoose';
 import mongoose from '../../config/database';
 
@@ -9,21 +8,23 @@ export interface ITools extends Document {
 }
 
 const ToolsSchema = new mongoose.Schema({
-  name: {
+  title: {
     type: String,
     require: true,
   },
-  email: {
+  link: {
     type: String,
-    unique: true,
     required: true,
-    lowercase: true,
   },
-  password: {
+  description: {
     type: String,
-    required: true,
-    select: false,
-    minlength: 6,
+  },
+  tags: {
+    type: [String],
+  },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'users',
   },
   updated: { type: Date, default: Date.now },
 });
