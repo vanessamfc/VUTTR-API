@@ -2,9 +2,11 @@ import { Document } from 'mongoose';
 import mongoose from '../../config/database';
 
 export interface ITools extends Document {
-  name?: string;
-  email?: string;
-  password?: string;
+  title: string;
+  link: string;
+  description: string;
+  tags: [string];
+  user: string;
 }
 
 const ToolsSchema = new mongoose.Schema({

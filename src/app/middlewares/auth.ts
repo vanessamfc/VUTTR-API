@@ -12,7 +12,7 @@ export default async (req: Request, res: Response, next: NextFunction) => {
   const [, token] = authHeader.split(' ');
   try {
     const decoded = jwt.verify(token, authConfig.secret as string) as {
-      id: number;
+      id: string;
     };
     req.userId = decoded.id;
 
