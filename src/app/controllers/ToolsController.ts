@@ -17,6 +17,15 @@ class ToolsController {
     return res.json(tool);
   }
 
+  async show(req: Request, res: Response) {
+    const { userId } = req;
+    const { tag } = req.query;
+
+    const tools = await Tools.find({ user: userId, tags: { $all: [tag] } });
+
+    return res.json({ tools });
+  }
+
   async store(req: Request, res: Response) {
     const schema = Yup.object().shape({
       title: Yup.string().required(),
