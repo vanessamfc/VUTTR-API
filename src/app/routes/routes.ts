@@ -15,6 +15,7 @@ routes.post('/session', SessionController.store);
 routes.use(auth);
 
 routes.post('/tools', ToolsController.store);
+routes.get('/tools', ToolsController.show);
 routes.get('/tools/:toolId', ToolsController.index);
 routes.put('/tools/:toolId', ToolsController.update);
 routes.delete('/tools/:toolId', ToolsController.delete);
